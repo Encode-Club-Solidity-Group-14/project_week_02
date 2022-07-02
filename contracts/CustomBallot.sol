@@ -39,6 +39,10 @@ contract CustomBallot {
         proposals[proposal].voteCount += amount;
         emit Voted(msg.sender, proposal, amount, proposals[proposal].voteCount);
     }
+    
+    function queryProposal(uint256 proposal) external view returns (bytes32 proposal_) {
+    return proposals[proposal].name;
+    }
 
     function winningProposal() public view returns (uint256 winningProposal_) {
         uint256 winningVoteCount = 0;
