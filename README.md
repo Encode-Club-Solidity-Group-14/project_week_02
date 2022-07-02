@@ -1,3 +1,7 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Encode-Club-Solidity-Group-14/project_week_02/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Encode-Club-Solidity-Group-14/project_week_02/tree/main)
+[![codecov](https://codecov.io/gh/Encode-Club-Solidity-Group-14/project_week_02/branch/main/graph/badge.svg?token=7Q8H4HMSJZ)](https://codecov.io/gh/Encode-Club-Solidity-Group-14/project_week_02)
+
+
 # Weekend project 2
 * Form groups of 3 to 5 students
 * Complete the contracts together
