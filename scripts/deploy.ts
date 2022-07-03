@@ -1,6 +1,7 @@
 import { ethers } from "hardhat";
 import * as customBallotJson from "../artifacts/contracts/CustomBallot.sol/CustomBallot.json";
 import * as tokenJson from "../artifacts/contracts/Token.sol/MyToken.json";
+import { initWallet } from './utils/initWallet';
 
 const EXPOSED_KEY = "NOT_USED";
 
@@ -14,14 +15,7 @@ function convertStringArrayToBytes32(array: string[]) {
 }
 
 async function main() {
-  const wallet =
-    process.env.MNEMONIC && process.env.MNEMONIC.length > 0
-      ? ethers.Wallet.fromMnemonic(process.env.MNEMONIC)
-      : new ethers.Wallet(process.env.PRIVATE_KEY ?? EXPOSED_KEY);
-
-  console.log(`Using address ${wallet.address}`);
-  const provider = ethers.providers.getDefaultProvider("ropsten");
-  const signer = wallet.connect(provider);
+  const signer = await initWallet();
   const balanceBN = await signer.getBalance();
   const balance = Number(ethers.utils.formatEther(balanceBN));
   console.log(`Wallet balance ${balance}`);
