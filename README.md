@@ -53,9 +53,9 @@ yarn ts-node --files .\scripts\deploy.ts Proposal_1 Proposal_2 Proposal_3
 
 **Result:**
 
-Token Contract deployed at [0x90E0d7a007dCf9438a38F7aa14F18E24853134B6](https://ropsten.etherscan.io/address/0x90E0d7a007dCf9438a38F7aa14F18E24853134B6)
+- Token Contract deployed at [0x90E0d7a007dCf9438a38F7aa14F18E24853134B6](https://ropsten.etherscan.io/address/0x90E0d7a007dCf9438a38F7aa14F18E24853134B6)
 
-Custom Ballot Contract deployed at [0xdfa071311CF8A04a6b32431cCcD6551573Ac58Ca](https://ropsten.etherscan.io/address/0xdfa071311CF8A04a6b32431cCcD6551573Ac58Ca)
+- Custom Ballot Contract deployed at [0xdfa071311CF8A04a6b32431cCcD6551573Ac58Ca](https://ropsten.etherscan.io/address/0xdfa071311CF8A04a6b32431cCcD6551573Ac58Ca)
 
 **Query Proposals**
 
