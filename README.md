@@ -61,7 +61,7 @@ yarn ts-node --files .\scripts\deploy.ts Proposal_1 Proposal_2 Proposal_3
 
 - Token Contract deployed at [0x90E0d7a007dCf9438a38F7aa14F18E24853134B6](https://ropsten.etherscan.io/address/0x90E0d7a007dCf9438a38F7aa14F18E24853134B6)
 
--Custom Ballot Contract deployed at [0xdfa071311CF8A04a6b32431cCcD6551573Ac58Ca](https://ropsten.etherscan.io/address/0xdfa071311CF8A04a6b32431cCcD6551573Ac58Ca)
+- Custom Ballot Contract deployed at [0xdfa071311CF8A04a6b32431cCcD6551573Ac58Ca](https://ropsten.etherscan.io/address/0xdfa071311CF8A04a6b32431cCcD6551573Ac58Ca)
 
 **Query Proposals**
 
@@ -111,3 +111,12 @@ yarn ts-node --files .\scripts\cast.ts 0xdfa071311CF8A04a6b32431cCcD6551573Ac58C
 
 - Cast transaction execution [0xbbc2b1a3ad8d074d024e6b179bf798e5b607577b5389dd0355c74da9e4a36f9c](https://ropsten.etherscan.io/tx/0xbbc2b1a3ad8d074d024e6b179bf798e5b607577b5389dd0355c74da9e4a36f9c)
 
+**Query results**
+
+Script: ``delegate.ts {custom_ballot_address}``
+
+```
+yarn ts-node --files .\scripts\query_results.ts 0xdfa071311CF8A04a6b32431cCcD6551573Ac58Ca
+```
+
+![Results](./docs/images/query_results.JPG)

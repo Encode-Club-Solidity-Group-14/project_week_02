@@ -1,7 +1,7 @@
 import { ethers } from "hardhat";
 import * as customBallotJson from "../artifacts/contracts/CustomBallot.sol/CustomBallot.json";
 import * as tokenJson from "../artifacts/contracts/Token.sol/MyToken.json";
-import { initWallet } from './utils/initWallet';
+import { initWallet1 } from './utils/initWallet';
 
 const EXPOSED_KEY = "NOT_USED";
 
@@ -15,7 +15,7 @@ function convertStringArrayToBytes32(array: string[]) {
 }
 
 async function main() {
-  const signer = await initWallet();
+  const signer = await initWallet1();
   const balanceBN = await signer.getBalance();
   const balance = Number(ethers.utils.formatEther(balanceBN));
   console.log(`Wallet balance ${balance}`);
