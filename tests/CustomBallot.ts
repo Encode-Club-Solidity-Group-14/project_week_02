@@ -156,4 +156,34 @@ describe("Ballot", function () {
       });
     });
   }
+
+  describe("when someone interact with the winningProposal function after one vote is cast for the first proposal", function () {
+    beforeEach(async () => {
+      const mintTx = await tokenContract.mint(
+        accounts[1].address,
+        ethers.utils.parseEther(BASE_VOTE_POWER.toFixed(18))
+      );
+      await mintTx.wait();
+      const delegateTx = await tokenContract
+        .connect(accounts[1])
+        .delegate(accounts[1].address);
+      await delegateTx.wait();
+      ballotContract = await ballotFactory.deploy(
+        convertStringArrayToBytes32(PROPOSALS),
+        tokenContract.address
+      );
+      await ballotContract.deployed();
+    });
+    it("It retrieves the first proposal", async function () {
+      const voterAddress = accounts[1].address;
+      const votePower = await tokenContract.getVotes(voterAddress);
+      await ballotContract.connect(accounts[1]).vote(PROPOSAL_CHOSEN[0], 1);
+      const proposal = await ballotContract.winningProposal();
+      expect(proposal).to.eq(0);
+      const proposalName = ethers.utils.parseBytes32String(await ballotContract.winnerName());
+      expect(proposalName).to.eq("Proposal 1");
+      const proposalQueried = ethers.utils.parseBytes32String(await ballotContract.queryProposal(0));
+      expect(proposalQueried).to.eq("Proposal 1");
+    });
+  });
 });
