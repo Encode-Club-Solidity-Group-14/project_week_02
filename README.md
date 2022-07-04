@@ -120,3 +120,15 @@ yarn ts-node --files .\scripts\query_results.ts 0xdfa071311CF8A04a6b32431cCcD655
 ```
 
 ![Results](./docs/images/query_results.JPG)
+
+**Create Ballot from Snapshots**
+
+Script: ``create_ballot_from_snapshot.ts {token_address} {list_of_proposals}``
+
+```
+yarn ts-node --files .\scripts\create_ballot_from_snapshot.ts 0x90E0d7a007dCf9438a38F7aa14F18E24853134B6 New_Proposal_1 New_Proposal_2 New_Proposal_3
+```
+
+![ballot_from_snapshot](./docs/images/ballot_from_snapshot.JPG)
+
+- Custom Ballot Contract deployed at [0x424832D0609DB848F70318a0747718b6B16dBb7f](https://ropsten.etherscan.io/address/0x424832D0609DB848F70318a0747718b6B16dBb7f)

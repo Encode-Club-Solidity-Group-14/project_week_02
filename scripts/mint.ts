@@ -21,6 +21,13 @@ async function main() {
     `Attaching MyToken contract interface to address ${myTokenAddress}`
   );
 
+  //Obtaining abi from MyToken.json
+  const myTokenContract: MyToken = new Contract(
+    myTokenAddress,
+    tokenJson.abi,
+    signer
+  ) as MyToken;
+
   //check for parameters Address to receive minted tokens
   if (process.argv.length < 4) {
     throw new Error("Creditor address missing");
@@ -36,13 +43,6 @@ async function main() {
 
   //Index 4 = Amount to mint
   const amountToMint = process.argv[4];
-
-  //Obtaining abi from MyToken.json
-  const myTokenContract: MyToken = new Contract(
-    myTokenAddress,
-    tokenJson.abi,
-    signer
-  ) as MyToken;
 
   const txMint = await myTokenContract.mint(addressToReceiveMintedTokens, ethers.utils.parseEther(amountToMint))
 
